@@ -16,9 +16,9 @@ include ('config_validacao_sessao.php');
 </head>
 
 <body>
-    <form class="">
 
-        <a class="logout" href="logout.php"> SAIR </a>
+ <a class="logout" href="logout.php"> SAIR </a> 
+    <form class="">        
         <a class="button" href="cadastro_impressoras.php"> CADASTRAR DE IMPRESSORAS </a>
         <a class="button" href="cadastro_toner.php" > CADASTRAR DE TONER </a>
         <a class="button" href="cadastro_impressoras.php"> NOTA </a>
@@ -29,3 +29,6 @@ include ('config_validacao_sessao.php');
 </body>
 
 </html>
+
+
+

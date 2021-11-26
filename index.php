@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/CSS" href="style/style_impressoras.css">
     <title>Documento</title>
 </head>
 <body>
@@ -20,7 +21,7 @@ session_start();
             if(isset($_SESSION['login_incorreto'])):
             ?>
             <div>
-            <a class="">Usuário/email já utilizado</a><br><br>
+            <h1 class="login_invalido">LOGIN INVALIDO</h1><br><br>
             <div>
             <?php
             endif;
@@ -32,6 +33,7 @@ session_start();
         <input name="senha" class="cadastro_text" size="23"  type="password"><br><br>
         
         <button type="submit" >CONFIRMAR</button><br><br>
+        <a href="cadastro_usuario.php" type="submit" >CADASTRAR</a><br><br>
     </form>
 
 </body>
