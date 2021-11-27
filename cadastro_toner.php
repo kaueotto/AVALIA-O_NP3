@@ -1,3 +1,8 @@
+<?php 
+include ('banco.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,18 +16,42 @@
 </head>
 
 <body>
-    <form class="box">
-        Modelo: <input name="modelo" class="style_cadastro" size="23px" type="text"></input> 
-        <br><br>
-        Cor: <select class="style_cadastro" name="COR">
-            <option>Preto</option>
-            <option>Ciano</option>
-            <option>Magenta</option>
-            <option>Amarelo</option>
-        </select>
-        <br><br>
-        <button class="submit" type="submit">
+    <form action="config_entrada_toner.php">
+        <table>
+            <h1> CADASTRO DE TONER </h1>
+            <tr>
+                <th class="imp">ID</th>
+                <th class="imp">MODELO</th>
+                <th class="imp">PRETO</th>
+                <th class="imp">ENTRADA</th>
+                <th class="imp">MAGENTA </th>
+                <th class="imp">ENTRADA</th>
+                <th class="imp">CIANO</th>
+                <th class="imp">ENTRADA</th>
+                <th class="imp">AMARELO</th>
+                <th class="imp">ENTRADA</th>
+            <tr>
+            <?php foreach($lista_toners as $toner): ?>
+                <tr>		
+                     <td class="imp"><input name="ID" type="number" value="<?php echo $toner['ID']; ?>" size="1"> </td>
+                    <td class="imp"><?php echo $toner['modelo']; ?></td>
+                    <td class="imp"><?php echo $toner['preto']; ?>  </td> 
+                    <td class="imp"><input class="input_preto" type="number" name="entrada_preto" size="8" value="0" > </td>
+                    <td class="imp"><?php echo $toner['magenta']; ?></td>
+                    <td class="imp"><input class="input_magenta" type="number" name="entrada_magenta" size="8" value="0" > </td>
+                    <td class="imp"><?php echo $toner['ciano']; ?></td>
+                    <td class="imp"><input class="input_ciano" type="number" name="entrada_ciano" size="8" value="0" > </td>
+                    <td class="imp"><?php echo $toner['amarelo']; ?></td>
+                    <td class="imp"><input class="input_amarelo" type="number" name="entrada_amarelo" size="8" value="0" > </td>
+                    <td>
+                        <button type="submit" href="editar.php?ID=<?php echo $toner['ID'] ?> ">CONFIRMAR</a>
+
+                    </td>
+                </tr>
+            <?php endforeach; ?>	
+        <table>	
     </form>
 </body>
 
 </html>
+
